@@ -2,7 +2,7 @@ score = 0;
 let firstCard = null;
 let secondCard = null;
 timer = 0.5;
-const numberOfCards = 15;
+const numberOfCards = 12;
 
 function clearBoard() {
     let table = document.getElementById('board');
@@ -54,6 +54,14 @@ function createCard(game_id){
 
 function flipCard(){
     let card = this;
+
+    // Reproduce un sonido al voltear la carta
+    // Selecciona un sonido al azar entre 1 y 9
+    let sound = Math.floor(Math.random() * 9) + 1;
+    let audio = new Audio('effects/effect-0'+sound+'.mp3');
+    audio.play();
+
+
     let img = card.childNodes[0];
     let swap = img.src;
     img.src = img.alternative_src;
