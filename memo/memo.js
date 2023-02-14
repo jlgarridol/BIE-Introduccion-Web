@@ -2,6 +2,23 @@ score = 0;
 let firstCard = null;
 let secondCard = null;
 timer = 0.5;
+const numberOfCards = 15;
+
+function clearBoard() {
+    let table = document.getElementById('board');
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
+}
+
+function newGame() {
+    clearBoard();
+    let winboard = document.getElementById('winboard');
+    winboard.style.display = 'none';
+    score = 0;
+    document.getElementById('points').innerHTML = score;
+    main();
+}
 
 
 function main() {
@@ -12,7 +29,7 @@ function main() {
 
 function createCards() {
     let cards = [];
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < numberOfCards; i++) {
         let card1 = createCard(i);
         let card2 = createCard(i);
         cards.push(card1);
@@ -41,6 +58,10 @@ function flipCard(){
     let swap = img.src;
     img.src = img.alternative_src;
     img.alternative_src = swap;
+    if (card == firstCard) {
+        firstCard = null;
+        return;
+    }
     if (firstCard == null) {
         firstCard = card;
     }
@@ -49,6 +70,9 @@ function flipCard(){
         if (firstCard.game_id == secondCard.game_id) {
             score++;
             document.getElementById('points').innerHTML = score;
+            //The cards cannot flip back if the user clicks on them before the timer ends
+            firstCard.removeEventListener('click', flipCard);
+            secondCard.removeEventListener('click', flipCard);
             firstCard = null;
             secondCard = null;
         }
@@ -56,15 +80,20 @@ function flipCard(){
             setTimeout(function() {
                 let img1 = firstCard.childNodes[0];
                 let img2 = secondCard.childNodes[0];
-                let swap = img1.src;
+                let swap1 = img1.src;
+                let swap2 = img2.src;
                 img1.src = img1.alternative_src;
                 img2.src = img2.alternative_src;
-                img1.alternative_src = swap;
-                img2.alternative_src = swap;
+                img1.alternative_src = swap1;
+                img2.alternative_src = swap2;
                 firstCard = null;
                 secondCard = null;
             }, timer * 1000);
         }
+    }
+
+    if (score == numberOfCards) {
+        finalizeGame();
     }
 }   
 
@@ -76,8 +105,20 @@ function putCardsOnBoard(cards) {
 }
 
 function shuffleCards(cards) {
-    cards.sort(() => Math.random() - 0.5);
+    for (let i = 0; i < cards.length; i++) {
+        let j = Math.floor(Math.random() * cards.length);
+        let swap = cards[i];
+        cards[i] = cards[j];
+        cards[j] = swap;
+    }
     return cards;
+}
+
+function finalizeGame() {
+    let winboard = document.getElementById('winboard');
+    let winpoints = document.getElementById('winpointsvalue');
+    winpoints.innerHTML = score;
+    winboard.style.display = 'block';
 }
 
 

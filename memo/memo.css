@@ -5,6 +5,14 @@
     color: white;
 }
 
+button {
+    background-color: green;
+    color: white;
+    border: 0;
+    padding: 0.25rem;
+
+}
+
 #title {
     font-family: sans-serif;
     font-weight: 400;
@@ -29,6 +37,17 @@ body {
 #board {
     width: 85%;
     margin: 0 auto;
+}
+
+#winboard {
+    width: 50%;
+    margin: 0 auto;
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    padding: 5rem;
+    background-color: rgba(0, 0, 0, 0.80);
 }
 
 .card {
