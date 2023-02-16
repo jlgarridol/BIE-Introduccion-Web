@@ -13,7 +13,7 @@ function sonidos(tipo){
     }
     switch(tipo){
         case 'victoria':
-            audio = new Audio('effects/victory.mp3');
+            audio = new Audio('effects/win.mp3');
             break;
         case 'parejaIncorrecta':
             audio = new Audio('effects/wrongPair.mp3');
