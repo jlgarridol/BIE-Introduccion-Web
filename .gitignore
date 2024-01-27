@@ -34,6 +34,11 @@ _testmain.go
 # mac hidden files
 .DS_Store
 
+# VIM specific
+*.un~
+*.swp
+
+
 ##other
 #node_modules/
 #bower_components/
