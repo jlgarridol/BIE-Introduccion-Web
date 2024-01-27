@@ -1,0 +1,66 @@
+<!--
+    DATE: 2023/Feb/17
+    AUTHOR: César Ignacio García Osorio (cgosorio@ubu.es)
+-->
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% En este documento aparecen cinco nuevos tipos de elementos:
+%%    'a', 'img', 'hr', 'br', 'b'.
+%%
+%% También aparecen seis nuevos atributos:
+%%    'href', 'id', 'alt', 'src', 'height', 'width'.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Los enlaces y las imágenes</title>
+    </head>
+    <body>
+
+        <h1>Enlaces</h1>
+
+        La navegación Web consiste en «saltar» de unos documentos a otros
+        utilizando los hiper-enlaces (o simplemente enlaces). 
+        Los enlaces pueden ser externos, como por ejemplo este a la 
+        <a href="http://www.ubu.es">
+            <!-- 👆 URL al recurso que se enlaza -->
+            página de la Universidad de Burgos  <!-- 👈 texto de ancla -->
+        </a>, o internos, como este
+        <a href="#last">
+            <!-- 👆 al elemento de identificador 'last' -->
+            al último párrafo del documento
+        </a>.
+
+        <h1>Imágenes</h1>
+
+        También podemos insertar imágenes, tanto internas, como la mostrada a
+        continuación: <br>
+        <img src="example-image.svg" />  <!-- 👈 un elemento imagen -->
+                <!-- 👆 el URL de la imagen, o la localización en el equipo -->
+                <!-- 👆 imagen de formato vectorial -->
+        <br />
+        como externas, como la que se ve aquí: <br>
+        <img src="http://cgosorio.es/MilkyWay.jpg"
+             alt="Imagen externa de ejemplo - La Vía Lactea"
+             width="1010" height="1263" />
+        <!-- 👆 alt: texto explicativo por si no se puede cargar -->
+        <!-- 👆 width, height: ancho y alto para acelerar el renderizado -->
+
+
+        <hr>
+
+
+        <h1 id="last">Otro encabezado de nivel 1 </h1> 
+        <!-- 👆 identificador del elemento -->
+
+        <p>
+            En html hay hasta seis niveles de encabezado, del <b>h1</b> al <b>h6</b>.
+        </p>
+    </body>
+</html>
