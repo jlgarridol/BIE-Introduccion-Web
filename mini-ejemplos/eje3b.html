@@ -1,16 +1,16 @@
 <!--
-    DATE: 2023/Feb/17
+    DATE: 2024/Ene/30
     AUTHOR: César Ignacio García Osorio (cgosorio@ubu.es)
 -->
 
 <!--
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
-%% En este documento aparecen cinco nuevos tipos de elementos:
-%%    'a', 'img', 'hr', 'br', 'b'.
+%% En este documento aparecen seis nuevos tipos de elementos:
+%%    'link', 'a', 'img', 'hr', 'br', 'b'.
 %%
-%% También aparecen seis nuevos atributos:
-%%    'href', 'id', 'alt', 'src', 'height', 'width'.
+%% También aparecen ocho nuevos atributos:
+%%    'ref', 'href', 'sizes', 'id', 'alt', 'src', 'height', 'width'.
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 -->
@@ -20,6 +20,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Los enlaces y las imágenes</title>
+        <link rel="icon" href="favicon.svg" sizes="any">
+     <!-- 👆 especifica la relación entre el documento actual
+             y un recurso externo (en este ejemplo el FAVICON).
+             - rel: indica la relación del documento enlazado con el actual.
+             - href: indica el URL al recurso enlazado.
+             - sizes: define los tamaños de los íconos para medios visuales
+                      contenidos en el recurso. El valor 'any' significa que
+                      el ícono puede ser escalado a cualquier tamaño, ya que
+                      es un formato vectorial.
+     -->
     </head>
     <body>
 
@@ -57,7 +67,7 @@
 
 
         <h1 id="last">Otro encabezado de nivel 1 </h1> 
-        <!-- 👆 identificador del elemento -->
+        <!-- 👆 IDENTIFICADOR del elemento -->
 
         <p>
             En html hay hasta seis niveles de encabezado, del <b>h1</b> al <b>h6</b>.
