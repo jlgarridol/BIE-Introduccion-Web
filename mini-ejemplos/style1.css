@@ -1,0 +1,31 @@
+html {
+    padding: 1cm;
+}
+
+/* Estilo para la `definition list` (<dl>) */
+dl {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f8f8f8; /* 👈 gris claro para el color de fondo */
+  border: 1px solid #ccc; /* 👈 un ligero color de borde */
+  border-radius: 8px; /* 👈 esquinas redondeadas */
+  padding: 20px; /* 👈 algo de espaciado interior */
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2); /* 👈 una sutil sombra para la caja */
+}
+
+/* Estilo para el `definition term` (<dt>) */
+dt {
+  font-weight: bold;  /* 👈 el `peso` de la fuente */
+  font-size: 1.2em;   /* 👈 el tamaño de la fuente */
+  margin-bottom: 0.5em;
+  color: #b00;        /* 👈 El color de la fuente */
+}
+
+/* Estilo para la `definition description` (<dd>) */
+dd {
+  margin-bottom: 1em;
+  color: #00a;
+}
+
+

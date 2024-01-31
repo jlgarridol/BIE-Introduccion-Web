@@ -1,0 +1,55 @@
+/* FROM: https://codepen.io/web-dot-dev/pen/NWYBMRb */
+
+ol {
+    margin-left:3cm;
+    width: 800px;
+	list-style: none;
+	padding: 0;
+}
+
+ol > li + li {
+	margin-top: 1rem;
+}
+
+ol > li {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	background: aliceblue;
+	padding: 1.5rem;
+	border-radius: 1rem;
+	width: calc(100% - 2rem);
+	box-shadow: 0.25rem 0.25rem 0.75rem rgb(0 0 0 / 0.1);
+}
+
+ol>li::before {
+	counter-increment: list-item;
+	content: counter(list-item);
+	font-size: 3rem;
+	font-weight: 700;
+	width: 2em;
+	height: 2em;
+	background: black;
+	flex: 0 0 auto;
+	border-radius: 50%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ol>li:nth-child(even) {
+	flex-direction: row-reverse;
+	background: lavender;
+	margin-right: -2rem;
+	margin-left: 2rem;
+}
+
+ol>li.opcional::before {
+	background: #777;
+}
+
+ol>li.opcional {
+	color: #777;
+}
+

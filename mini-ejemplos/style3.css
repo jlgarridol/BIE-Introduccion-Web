@@ -1,0 +1,48 @@
+/* FROM: https://codepen.io/web-dot-dev/pen/poLZVbr */
+
+ul {
+    list-style-position: inside;
+    width: 800px;
+    max-width: 100%;
+    background: white;
+    box-shadow: 0.25rem 0.25rem 0.75rem rgb(0 0 0 / 0.15);
+    margin: 0;
+    border-radius: 0.1rem;
+}
+
+ul > li {
+    padding: 1rem;
+}
+
+ul > li:not(:last-child) {
+    border-bottom: 1px solid lightblue;
+}
+
+ul > li:first-child {
+    margin-top: 1rem;
+}
+
+ul > li:last-child {
+    margin-bottom: 1rem;
+}
+
+ul > li.opcional {
+    color: grey;
+}
+
+ul > li.opcional::marker {
+    content: url("marker0.svg") ' ' !important;
+}
+
+ul > li::marker {
+    content: url("marker1.svg") ' ';
+}
+
+ul > li:nth-child(3n)::marker {
+    content: url("marker2.svg") ' ';
+}
+
+ul > li:nth-child(3n - 1)::marker {
+    content: url("marker3.svg") ' ';
+}
+
