@@ -1,0 +1,79 @@
+<!--
+    DATE: 2024/Ene/30
+    AUTHOR: César Ignacio García Osorio (cgosorio@ubu.es)
+-->
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% En este documento aparecen seis nuevos tipos de elementos:
+%%    'link', 'a', 'img', 'hr', 'br', 'b'.
+%%
+%% También aparecen ocho nuevos atributos:
+%%    'ref', 'href', 'sizes', 'id', 'alt', 'src', 'height', 'width'.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Los enlaces y las imágenes</title>
+        <link rel="icon" href="favicon.svg" sizes="any">
+     <!-- 👆 especifica la relación entre el documento actual
+             y un recurso externo (en este ejemplo el FAVICON).
+             - rel: indica la relación del documento enlazado con el actual.
+             - href: indica el URL al recurso enlazado.
+             - sizes: define los tamaños de los ÍCONOS para medios visuales
+                      contenidos en el recurso. El valor 'any' significa que
+                      el ícono puede ser escalado a cualquier tamaño, ya que
+                      es una imagen en FORMATO VECTORIAL.
+     -->
+    </head>
+    <body>
+
+        <h1>Enlaces</h1>
+
+        La navegación Web consiste en «saltar» de unos documentos a otros
+        utilizando los HIPERENLACES, HIPERVÍNCULOS (o simplemente enlaces). 
+        Los enlaces pueden ser externos, como por ejemplo este a la 
+        <a href="http://www.ubu.es">
+            <!-- 👆 URL al recurso que se enlaza -->
+            página de la Universidad de Burgos  <!-- 👈 texto de ANCLA -->
+        </a>, o internos, como este
+        <a href="#last">
+            <!-- 👆 al elemento de identificador 'last' -->
+            al último párrafo del documento
+        </a>. También se pueden establecer enlaces a cosas que no sean
+        páginas web, por ejemplo direcciones de correo electrónico,
+        como por ejemplo esta:
+        <a href="mailto:cgosorio@ubu.es">cgosorio@ubu.es</a>.
+
+        <h1>Imágenes</h1>
+
+        También podemos insertar imágenes, tanto internas, como la mostrada a
+        continuación: <br>
+        <img src="example-image.svg" />  <!-- 👈 un elemento imagen -->
+                <!-- 👆 el URL de la imagen, o la localización en el equipo -->
+                <!-- 👆 imagen de formato vectorial -->
+        <br />
+        como externas, como la que se ve aquí: <br>
+        <img src="http://cgosorio.es/MilkyWay.jpg"
+             alt="Imagen externa de ejemplo - La Vía Lactea"
+             width="1010" height="1263" />
+        <!-- 👆 alt: texto explicativo por si no se puede cargar -->
+        <!-- 👆 width, height: ancho y alto para acelerar el RENDERIZADO -->
+
+
+        <hr>
+
+
+        <h1 id="last">Otro encabezado de nivel 1 </h1> 
+        <!-- 👆 IDENTIFICADOR del elemento -->
+
+        <p>
+            En html hay hasta seis niveles de encabezado, del <b>h1</b> al <b>h6</b>.
+        </p>
+    </body>
+</html>

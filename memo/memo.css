@@ -42,7 +42,7 @@ body {
 #winboard {
     width: 50%;
     margin: 0 auto;
-    display: none;
+    display: none;   /* 👈 controla la presencia del elemento */
     position: fixed;
     top: 25%;
     left: 25%;
