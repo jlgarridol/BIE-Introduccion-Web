@@ -78,7 +78,7 @@
         <input type="checkbox" name="terminos" id="terminos">
 
         <input type="button" value="Enviar" id="submit">
-        <!-- ☝️ el 'type' 'button' no envía el formulario, solo ejecuta el código asociado al evento 'click' -->
+        <!-- ☝️  el 'type' 'button' no envía el formulario, solo ejecuta el código asociado al evento 'click' -->
 
         
     </form>
@@ -103,9 +103,9 @@
             *  - do while -> do { código } while (condición)
             *  - switch -> switch (variable) { case valor: código break; ... default: código }
          * Funciones
-            *  - function nombre_funcion(parametros) { código }
-            *  - anónimas -> function (parametros) { código }
-            *  - flecha -> (parametros) => { código }  
+            *  - function nombre_función(parámetros) { código }
+            *  - anónimas -> function (parámetros) { código }
+            *  - flecha -> (parámetros) => { código }  
          * Objeto
             *  - document
             *  - document.getElementById(id) <- devuelve un elemento
@@ -169,14 +169,14 @@
             }
 
             var continente = document.getElementById("continente").value; // 👈  el ELEMENTO 'select' con ID 'continente', value es el valor de la opción
-            var terminos = document.getElementById("terminos").checked; // 👈  el ELEMENTO 'input' con ID 'terminos', checked es un booleano que indica si está marcado
+            var terminos = document.getElementById("terminos").checked; // 👈  el ELEMENTO 'input' con ID 'términos', checked es un booleano que indica si está marcado
 
             var datos = [nombre, apellidos, email, password, idioma, continente, terminos]; // 👈  el ARRAY 'datos', pueden ser de todo tipo
             return datos; // 👈  la FUNCIÓN 'obtener_datos' devuelve el ARRAY 'datos'
         }
 
         function validar_datos(datos){
-            var errores = []; // 👈  el ARRAY 'errores', está vación porque aún no sabe si hay errores
+            var errores = []; // 👈  el ARRAY 'errores', está vacío porque aún no sabe si hay errores
             // 👇  el ARRAY 'datos' tiene los datos del formulario, se asignan a diversos
             var nombre = datos[0];
             var apellidos = datos[1];
