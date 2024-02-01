@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+    <!-- Verificador de formularios -->
+    <!-- El objetivo de este ejercicio es tener un formulario de registro que tenga una serie
+        de condiciones para verificar cada campo antes de aceptar el envío de la petición-->
+    <div class="formulario">
+        <form id="formulario">
+            <h1>Registro</h1>
+            <p>Por favor, rellene el siguiente formulario para registrarse</p>
+            <p id="error" class="error"></p>
+
+            <label for="dni">DNI</label>
+            <span id="dniError" class="error"></span>
+            <input type="text" name="dni" id="dni" placeholder="DNI">
+
+            <label for="nombre">Nombre</label>
+            <span id="nombreError" class="error"></span>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+
+            <label for="apellidos">Apellidos</label>
+            <span id="apellidosError" class="error"></span>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+
+            <label for="email">Email</label>
+            <span id="emailError" class="error"></span>
+            <input type="text" name="email" id="email" placeholder="Email">
+
+            <label for="password">Contraseña</label>
+            <span id="passwordError" class="error"></span>
+            <input type="password" name="password" id="password" placeholder="Contraseña">
+
+            <label for="password2">Repetir contraseña</label>
+            <span id="password2Error" class="error"></span>
+            <input type="password" name="password2" id="password2" placeholder="Repetir contraseña">
+
+            <label for="telefono">Teléfono</label>
+            <span id="telefonoError" class="error"></span>
+            <input type="text" name="telefono" id="telefono" placeholder="Teléfono">
+
+            <label for="Provincia">Provincia</label>
+            <span id="provinciaError" class="error"></span>
+            <select name="provincia" id="provincia">
+                <option value="0">Seleccione una provincia</option>
+                <!--Todas las provincias en orden alfabético-->
+                <option value="1">Álava</option>
+                <option value="2">Albacete</option>
+                <option value="3">Alicante</option>
+                <option value="4">Almería</option>
+                <option value="5">Asturias</option>
+                <option value="6">Ávila</option>
+                <option value="7">Badajoz</option>
+                <option value="8">Barcelona</option>
+                <option value="9">Burgos</option>
+                <option value="10">Cáceres</option>
+                <option value="11">Cádiz</option>
+                <option value="12">Cantabria</option>
+                <option value="13">Castellón</option>
+                <option value="14">Ciudad Real</option>
+                <option value="15">Córdoba</option>
+                <option value="16">Cuenca</option>
+                <option value="17">Gerona</option>
+                <option value="18">Granada</option>
+                <option value="19">Guadalajara</option>
+                <option value="20">Guipúzcoa</option>
+                <option value="21">Huelva</option>
+                <option value="22">Huesca</option>
+                <option value="23">Islas Baleares</option>
+                <option value="24">Jaén</option>
+                <option value="25">La Coruña</option>
+                <option value="26">La Rioja</option>
+                <option value="27">Las Palmas</option>
+                <option value="28">León</option>
+                <option value="29">Lérida</option>
+                <option value="30">Lugo</option>
+                <option value="31">Madrid</option>
+                <option value="32">Málaga</option>
+                <option value="33">Murcia</option>
+                <option value="34">Navarra</option>
+                <option value="35">Orense</option>
+                <option value="36">Palencia</option>
+                <option value="37">Pontevedra</option>
+                <option value="38">Salamanca</option>
+                <option value="39">Segovia</option>
+                <option value="40">Sevilla</option>
+                <option value="41">Soria</option>
+                <option value="42">Tarragona</option>
+                <option value="43">Tenerife</option>
+                <option value="44">Teruel</option>
+                <option value="45">Toledo</option>
+                <option value="46">Valencia</option>
+                <option value="47">Valladolid</option>
+                <option value="48">Vizcaya</option>
+                <option value="49">Zamora</option>
+                <option value="50">Zaragoza</option>
+            </select>
+
+            <label for="Acepto">Acepto las condiciones</label>
+            <input type="checkbox" name="acepto" id="acepto" value="1">
+            <span id="aceptoError" class="error"></span>
+            
+        </form>
+        <button id="enviar">Enviar</button>
+        <p id="mensaje"></p>
+    </div>
+    <script src="forms.js"></script>
+</body>
+</html>
