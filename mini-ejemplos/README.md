@@ -72,3 +72,30 @@ Elementos: form, label, input, select, option
 
 Atributos: action, method, for, name, placeholder, required, type
 
+
+
+eje6b.html
+-----------------
+
+Conceptos:
+- Variable
+- Tipo de datos
+- Estructuras de control
+- DOM
+- Evento
+- Objeto
+
+Elemento: script
+
+Atributo: type
+
+JS keywords: function, var, for, if, return
+
+JS methods: 
+- document.getElementById
+- document.getElementsByName
+- Array.length
+- Array.push
+- Element.innetHTML
+- Element.checked
+
