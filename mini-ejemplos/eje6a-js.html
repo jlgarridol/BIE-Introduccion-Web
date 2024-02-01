@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        input, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 50%;
+            padding: 2em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+            background-color: #f1f1f1;
+        }
+
+        #error {
+            width: 50%;
+            margin: 0 auto;
+            padding: 1em;
+            color: red;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            padding: 0;
+            border: none;
+        }
+        .etiqueta {
+            display: block;
+            margin-bottom: 0.5em;
+            font-size: 1.3rem;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <!--Formularios-->
+    <form action="#" method="post">
+        <label for="nombre" class="etiqueta">Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required="required">
+
+        <label for="apellidos" class="etiqueta">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required="required">
+
+        <label for="email" class="etiqueta">Email</label>
+        <input type="text" name="email" id="email" placeholder="Email">
+
+        <label for="password" class="etiqueta">Contraseña</label>
+        <input type="password" name="password" id="password" placeholder="Contraseña" required="required">
+
+        <label for="idioma" class="etiqueta">Idioma</label>
+        <input type="radio" name="idioma" id="español" value="español">
+        <label for="español">Español</label>
+        <input type="radio" name="idioma" id="ingles" value="ingles">
+        <label for="ingles">Inglés</label>
+        <input type="radio" name="idioma" id="frances" value="frances">
+        <label for="frances">Francés</label>
+
+        <label for="continente" class="etiqueta">Continente</label>
+        <select name="continente" id="continente">
+            <option value="0">Seleccione un continente</option>
+            <option value="1">América</option>
+            <option value="2">Europa</option>
+            <option value="3">Asia</option>
+            <option value="4">África</option>
+            <option value="5">Oceanía</option>
+        </select>
+
+        <label for="terminos">Acepto los términos y condiciones</label>
+        <input type="checkbox" name="terminos" id="terminos">
+        <!--Botón-->
+        <input type="button" value="Enviar" id="submit">
+        
+    </form>
+    <div id="error"></div>
+
+    <!--Scripts-->
+    <script type="text/javascript">
+        // 1. Obtener los datos del formulario
+        // 2. Validar los datos
+        // 3. Mostrar los errores
+
+        function obtener_datos(){
+            var nombre = document.getElementById("nombre").value;
+            var apellidos = document.getElementById("apellidos").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var idioma = ""
+            var radios = document.getElementsByName("idioma");
+            for(var i = 0; i < radios.length; i++){
+                if(radios[i].checked){
+                    idioma = radios[i].value;
+                }
+            }
+
+            var continente = document.getElementById("continente").value;
+            var terminos = document.getElementById("terminos").checked;
+
+            var datos = [nombre, apellidos, email, password, idioma, continente, terminos];
+            return datos;
+        }
+
+        function validar_datos(datos){
+            var errores = [];
+            var nombre = datos[0];
+            var apellidos = datos[1];
+            var email = datos[2];
+            var password = datos[3];
+            var idioma = datos[4];
+            var continente = datos[5];
+            var terminos = datos[6];
+
+            if(nombre.length == 0){
+                errores.push("El nombre no puede estar vacío");
+            }
+            if(apellidos.length == 0){
+                errores.push("Los apellidos no pueden estar vacíos");
+            }
+            if(email.length == 0){
+                errores.push("El email no puede estar vacío");
+            }
+            if(password.length == 0){
+                errores.push("La contraseña no puede estar vacía");
+            }
+            if(idioma.length == 0){
+                errores.push("Debe seleccionar un idioma");
+            }
+            if(continente == 0){
+                errores.push("Debe seleccionar un continente");
+            }
+            if(!terminos){
+                errores.push("Debe aceptar los términos y condiciones");
+            }
+
+            return errores;
+        }
+
+        function mostrar_errores(errores){
+            var error = document.getElementById("error");
+            error.innerHTML = "";
+            for(var i = 0; i < errores.length; i++){
+                error.innerHTML += errores[i] + "<br>";
+            }
+        }
+
+        document.getElementById("submit").onclick = function (){
+            var datos = obtener_datos();
+            var errores = validar_datos(datos);
+            mostrar_errores(errores);
+        };
+        
+    </script>
+  </body>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        input, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 50%;
+            padding: 2em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+            background-color: #f1f1f1;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            padding: 0;
+            border: none;
+        }
+        .etiqueta {
+            display: block;
+            margin-bottom: 0.5em;
+            font-size: 1.3rem;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <!--Formularios-->
+    <form action="#" method="post"> <!-- 👈  la DECLARACIÓN DEL FORMULARIO -->
+        <!-- ☝️ puede tener ATRIBUTOS, como el 'action' y el 'method' -->
+        <!-- El 'action' es la URL a la que se enviará el formulario -->
+        <!-- El 'method' es el método de envío, puede ser 'get' o 'post' -->
+        <label for="nombre" class="etiqueta">Nombre</label> <!-- 👈  la ETIQUETA 'label' -->
+        <!-- ☝️ puede tener ATRIBUTOS, como el 'for' -->
+        <!-- El 'for' es el ID del elemento al que se asocia la etiqueta -->
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required="required"> <!-- 👈  el ELEMENTO 'input' -->
+        <!-- ☝️ puede tener ATRIBUTOS, como el 'type', el 'name', el 'id', el 'placeholder', el 'value' y el 'required' -->
+        <!-- El 'type' es el tipo de elemento, puede ser 'text', 'password', 'radio', 'checkbox', 'submit', 
+                                                         'reset', 'button', 'file', 'hidden', 'image', 
+                                                         'number', 'range', 'search', 'tel', 'url', 
+                                                         'email', 'date', 'month', 'week', 'time', 
+                                                         'datetime', 'datetime-local', 'color' -->
+        <!-- El 'name' es el nombre del elemento, se usa para enviar el valor del elemento -->
+        <!-- El 'id' es el identificador del elemento, se usa para asociar la etiqueta 'label' -->
+        <!-- El 'placeholder' es el texto que aparece en el elemento cuando está vacío -->
+        <!-- El 'required' es un booleano que indica si el elemento es obligatorio -->
+        <!-- El 'value' es el valor del elemento, se usa para establecer un valor por defecto -->
+
+
+        <label for="apellidos" class="etiqueta">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required="required">
+
+        <label for="email" class="etiqueta">Email</label>
+        <input type="text" name="email" id="email" placeholder="Email">
+
+        <label for="password" class="etiqueta">Contraseña</label>
+        <input type="password" name="password" id="password" placeholder="Contraseña" required="required">
+        <!-- ☝️ el 'type' 'password' oculta el texto que se escribe en el elemento -->
+
+
+        <label for="idioma" class="etiqueta">Idioma</label>
+        <input type="radio" name="idioma" id="español" value="español">
+        <label>Español</label>
+        <input type="radio" name="idioma" id="ingles" value="ingles">
+        <label>Inglés</label>
+        <input type="radio" name="idioma" id="frances" value="frances">
+        <label>Francés</label>
+        <!-- ☝️ el 'type' 'radio' permite seleccionar una opción de entre varias -->
+        <!-- ☝️ los elementos 'radio' con el mismo 'name' forman un grupo, de forma que solo se puede seleccionar uno -->
+
+        <label for="continente" class="etiqueta">Continente</label>
+        <select name="continente" id="continente"> <!-- 👈  el ELEMENTO 'select' -->
+            <option value="0">Seleccione un continente</option>
+            <option value="1">América</option>
+            <option value="2">Europa</option>
+            <option value="3">Asia</option>
+            <option value="4">África</option>
+            <option value="5">Oceanía</option>
+        </select>
+        <!-- ☝️ el 'select' permite seleccionar una opción de entre varias -->
+        <!-- ☝️ las opciones se indican con elementos 'option' -->
+        <!-- ☝️ el 'value' de cada opción es el valor que se envía al servidor -->
+
+        <label for="terminos">Acepto los términos y condiciones</label>
+        <input type="checkbox" name="terminos" id="terminos">
+        <!-- ☝️ el 'type' 'checkbox' permite seleccionar una opción-->
+        <!--Botón-->
+        <input type="submit" value="Enviar">
+        <!-- ☝️ el 'type' 'submit' envía el formulario -->
+    </form>
+  </body>

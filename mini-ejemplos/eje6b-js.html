@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        input, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 50%;
+            padding: 2em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+            background-color: #f1f1f1;
+        }
+
+        #error {
+            width: 50%;
+            margin: 0 auto;
+            padding: 1em;
+            color: red;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            padding: 0;
+            border: none;
+        }
+        .etiqueta {
+            display: block;
+            margin-bottom: 0.5em;
+            font-size: 1.3rem;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <!--Formularios-->
+    <form action="#" method="post">
+        <label for="nombre" class="etiqueta">Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required="required">
+
+        <label for="apellidos" class="etiqueta">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required="required">
+
+        <label for="email" class="etiqueta">Email</label>
+        <input type="text" name="email" id="email" placeholder="Email">
+
+        <label for="password" class="etiqueta">Contraseña</label>
+        <input type="password" name="password" id="password" placeholder="Contraseña" required="required">
+
+        <label for="idioma" class="etiqueta">Idioma</label>
+        <input type="radio" name="idioma" id="español" value="español">
+        <label for="español">Español</label>
+        <input type="radio" name="idioma" id="ingles" value="ingles">
+        <label for="ingles">Inglés</label>
+        <input type="radio" name="idioma" id="frances" value="frances">
+        <label for="frances">Francés</label>
+
+        <label for="continente" class="etiqueta">Continente</label>
+        <select name="continente" id="continente">
+            <option value="0">Seleccione un continente</option>
+            <option value="1">América</option>
+            <option value="2">Europa</option>
+            <option value="3">Asia</option>
+            <option value="4">África</option>
+            <option value="5">Oceanía</option>
+        </select>
+
+        <label for="terminos">Acepto los términos y condiciones</label>
+        <input type="checkbox" name="terminos" id="terminos">
+
+        <input type="button" value="Enviar" id="submit">
+        <!-- ☝️ el 'type' 'button' no envía el formulario, solo ejecuta el código asociado al evento 'click' -->
+
+        
+    </form>
+    <div id="error"></div>
+
+    <!--Scripts-->
+    <script type="text/javascript">
+        
+        /**
+         * Tipos de datos
+            *  - number
+            *  - string (cadenas de caracteres)
+            *  - boolean (true o false) 
+            *  - array (conjunto de datos)
+            *  - object (conjunto de datos con nombre)
+         * Bloques de código
+            *  - if -> if (condición) { código }
+            *  - if else -> if (condición) { código } else { código }
+            *  - if else if -> if (condición) { código } else if (condición) { código } ... else { código }
+            *  - for -> for (inicialización; condición; incremento) { código }
+            *  - while -> while (condición) { código }
+            *  - do while -> do { código } while (condición)
+            *  - switch -> switch (variable) { case valor: código break; ... default: código }
+         * Funciones
+            *  - function nombre_funcion(parametros) { código }
+            *  - anónimas -> function (parametros) { código }
+            *  - flecha -> (parametros) => { código }  
+         * Objeto
+            *  - document
+            *  - document.getElementById(id) <- devuelve un elemento
+            *  - document.getElementsByName(name) <- devuelve un array
+            *  - document.getElementsByTagName(tag) <- devuelve un array
+            *  - document.getElementsByClassName(class) <- devuelve un array
+         * Evento
+             Eventos de ratón
+            *  - onclick -> elemento.onclick = function () { código } <- Cuando se hace click
+             Eventos de teclado
+            *  - onkeydown -> elemento.onkeydown = function () { código } <- Cuando se pulsa una tecla
+            *  - onkeyup -> elemento.onkeyup = function () { código } <- Cuando se suelta una tecla
+             Eventos de formulario
+            *  - onfocus -> elemento.onfocus = function () { código } <- Cuando se selecciona un elemento
+            *  - onblur -> elemento.onblur = function () { código } <- Cuando se deselecciona un elemento
+            *  - onchange -> elemento.onchange = function () { código } <- Cuando cambia el valor de un elemento
+            *  - onsubmit -> elemento.onsubmit = function () { código } <- Cuando se envía un formulario
+             Eventos de ventana
+            *  - onload -> window.onload = function () { código }
+            *  - onscroll -> window.onscroll = function () { código }
+
+             Existen muchos más eventos, pero estos son los más comunes
+          * Acciones sobre objetos html
+            *  - elemento.innerHTML = "texto"/"código html" <- cambia el contenido del elemento
+            *  - elemento.value = "texto" <- cambia el valor del elemento
+            *  - elemento.checked = true/false <- cambia el valor del elemento
+            *  - elemento.style.propiedad = "valor" <- cambia el estilo del elemento
+            *  - elemento.setAttribute("atributo", "valor") <- cambia el valor del atributo del elemento
+            *  - elemento.getAttribute("atributo") <- devuelve el valor del atributo del elemento
+            *  - elemento.appendChild(elemento) <- añade un elemento hijo al elemento
+            *  - elemento.removeChild(elemento) <- elimina un elemento hijo del elemento
+            *  - elemento.replaceChild(elemento, elemento) <- reemplaza un elemento hijo del elemento
+            *  - elemento.insertBefore(elemento, elemento) <- inserta un elemento hijo del elemento
+            *  - elemento.cloneNode(true/false) <- devuelve una copia del elemento
+            *  - elemento.addEventListener("evento", function () { código }) <- añade un evento al elemento
+            *  - elemento.removeEventListener("evento", function () { código }) <- elimina un evento del elemento
+            *  - elemento.addClassName("clase") <- añade una clase al elemento
+            *  - elemento.removeClassName("clase") <- elimina una clase del elemento
+         */
+
+
+        function obtener_datos(){ // 👈  la FUNCIÓN 'obtener_datos'
+
+            // 👇  definimos variables con var o let. var afecta a la función, let al bloque (entre {}) y si no se pone nada a todo
+            var nombre = document.getElementById("nombre").value; // 👈  el ELEMENTO 'input' con ID 'nombre'
+                        // ☝️ mira el HTML, el 'input' tiene un 'id' que es 'nombre'
+                                                                // 👇  el ATRIBUTO 'value' del ELEMENTO 'input'
+            var apellidos = document.getElementById("apellidos").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // 👇  los ELEMENTOS 'radio' con NAME 'idioma'
+            var idioma = ""
+            var radios = document.getElementsByName("idioma");
+            for(var i = 0; i < radios.length; i++){ // 👈  el BUCLE 'for', mira todos lo
+                // 👇 condición, la acepta si es verdadera
+                if(radios[i].checked){ // 👈  el ATRIBUTO 'checked' del ELEMENTO 'input', 
+                    idioma = radios[i].value; // 
+                    // ☝️ var solo existe dentro de la función
+                }
+            }
+
+            var continente = document.getElementById("continente").value; // 👈  el ELEMENTO 'select' con ID 'continente', value es el valor de la opción
+            var terminos = document.getElementById("terminos").checked; // 👈  el ELEMENTO 'input' con ID 'terminos', checked es un booleano que indica si está marcado
+
+            var datos = [nombre, apellidos, email, password, idioma, continente, terminos]; // 👈  el ARRAY 'datos', pueden ser de todo tipo
+            return datos; // 👈  la FUNCIÓN 'obtener_datos' devuelve el ARRAY 'datos'
+        }
+
+        function validar_datos(datos){
+            var errores = []; // 👈  el ARRAY 'errores', está vación porque aún no sabe si hay errores
+            // 👇  el ARRAY 'datos' tiene los datos del formulario, se asignan a diversos
+            var nombre = datos[0];
+            var apellidos = datos[1];
+            var email = datos[2];
+            var password = datos[3];
+            var idioma = datos[4];
+            var continente = datos[5];
+            var terminos = datos[6];
+
+            // 👇  se comprueba el tamaño del nombre, si es 0 es que no hay nombre
+            if(nombre.length == 0){
+                // 👇  se añade un mensaje de error al ARRAY 'errores'
+                errores.push("El nombre no puede estar vacío");
+                    // ☝️ añade un elemento al final del ARRAY
+            }
+            if(apellidos.length == 0){
+                errores.push("Los apellidos no pueden estar vacíos");
+            }
+            if(email.length == 0){
+                errores.push("El email no puede estar vacío");
+            }
+            if(password.length == 0){
+                errores.push("La contraseña no puede estar vacía");
+            }
+            if(idioma.length == 0){
+                errores.push("Debe seleccionar un idioma");
+            }
+            if(continente == 0){ // 👈  el valor de la opción 'Seleccione un continente' es 0
+                errores.push("Debe seleccionar un continente");
+            }
+            // 👇  se comprueba si está marcado el checkbox, 
+            if(!terminos){ // 👈  el símbolo '!' es el operador de negación, niega el valor booleano
+                errores.push("Debe aceptar los términos y condiciones");
+            }
+
+            return errores;
+        }
+
+        function mostrar_errores(errores){
+            var error = document.getElementById("error");
+            error.innerHTML = "";
+            for(var i = 0; i < errores.length; i++){
+                error.innerHTML += errores[i] + "<br>";
+            }
+        }
+
+        document.getElementById("submit").onclick = function (){
+            var datos = obtener_datos();
+            var errores = validar_datos(datos);
+            mostrar_errores(errores);
+        };
+        
+    </script>
+  </body>
