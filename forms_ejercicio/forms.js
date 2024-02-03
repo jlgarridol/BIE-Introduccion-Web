@@ -1,7 +1,9 @@
 // Crear funciones que verifiquen los campos del formulario
 // y que se ejecuten al enviar el formulario
 
-// Funciones auxiliares
+
+// 🟢🟢🟢 Funciones auxiliares 🟢🟢🟢
+
 function muestraError(nombre_del_campo, mensaje) {
     let sufijo = "Error";
     let input = document.getElementById(nombre_del_campo);
@@ -41,7 +43,8 @@ function nif(dni) {
 }
 
 
-// Funciones ya hechas
+// 🟢🟢🟢 Funciones ya hechas 🟢🟢🟢
+
 function checkDNI() {
     var dni = document.getElementById("dni").value;
     resultado = nif(dni);
@@ -83,32 +86,36 @@ function checkPassword() {
 
 }
 
-// Funciones a completar
+// 🟠🟠🟠 Funciones a completar 🟠🟠🟠
 
 function checkNombre() {
     // Condición: el nombre debe tener al menos 3 caracteres
-    // Escriba aquí su código
+
+    // 👇👇👇  Escribe aquí tu código  👇👇👇
 
     return false;
 }
 
 function checkApellido() {
     // Condición: el apellido debe tener al menos 3 caracteres
-    // Escriba aquí su código
+
+    // 👇👇👇  Escribe aquí tu código  👇👇👇
 
     return false;
 }
 
 function checkTelefono() {
     // Condición: el teléfono debe tener al menos 9 números
-    // Escriba aquí su código
+
+    // 👇👇👇  Escribe aquí tu código  👇👇👇
 
     return false;
 }
 
 function checkConfirmPassword() {
     // Condición: las contraseñas deben coincidir
-    // Escriba aquí su código
+
+    // 👇👇👇  Escribe aquí tu código  👇👇👇
 
     return false;
     
@@ -116,19 +123,19 @@ function checkConfirmPassword() {
 
 function checkProvincia() {
     // Condición: debe haber seleccionada una provincia, si no se ha elegido ninguna, el valor es 0
-    // Escriba aquí su código
+
+    // 👇👇👇  Escribe aquí tu código  👇👇👇
 
     return false;
 }
 
 function checkCondiciones() {
     // Condición: las condiciones deben estar aceptadas
-    // Escriba aquí su código
+
+    // 👇👇👇  Escribe aquí tu código  👇👇👇
 
     return false;
-}
-
-
+}H
 // Función que verifica el formulario antes de enviarlo
 function checkForm() {
     // Verificar que todos los campos estén correctos
@@ -140,7 +147,8 @@ function checkForm() {
     // en los campos correspondientes
     // Si un campo es correcto, hay que borrar el mensaje de error
     // y la clase error del campo
-    // Escriba aquí su código
+
+    // 👇👇👇  Escribe aquí tu código  👇👇👇
 
     // Ejemplo con DNI, email y contraseña
     let checkDNI_result = checkDNI();
@@ -190,19 +198,27 @@ function checkForm() {
         input.classList.remove("error");
     }
 
-    /////////////////////////
-    // Escriba aquí su código
+    // 👇👇👇  Escribe aquí tu código  👇👇👇
 
 
     return resultado;
 }
 
-// Función que se ejecuta al enviar el formulario
-document.getElementById("enviar").onclick = function () {
 
+// 🟢🟢🟢 Función que se ejecuta al enviar el formulario 🟢🟢🟢
+document.getElementById("enviar").onclick = function () {
     // Comprobar que el formulario es correcto
     // Si no es correcto, mostrar un mensaje de error
     // Si es correcto, mostrar un mensaje de éxito
-    // Escriba aquí su código
-    
+    let resultado_formulario = checkForm();
+    let mensaje = "";
+    let mensaje_span = document.getElementById("mensaje");
+    if (resultado_formulario == false) {
+        mensaje = "El formulario no se puede enviar porque hay errores";
+        mensaje_span.innerHTML = mensaje;
+        return false;
+    }
+    mensaje = "El formulario es correcto y se puede enviar";
+    mensaje_span.innerHTML = mensaje;
+    return false;
 }

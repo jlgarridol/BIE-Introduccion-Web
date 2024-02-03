@@ -1,7 +1,9 @@
 // Crear funciones que verifiquen los campos del formulario
 // y que se ejecuten al enviar el formulario
 
-// Funciones auxiliares
+
+// 🟢🟢🟢 Funciones auxiliares 🟢🟢🟢
+//
 function muestraError(nombre_del_campo, mensaje) {
     let sufijo = "Error";
     let input = document.getElementById(nombre_del_campo);
@@ -39,6 +41,12 @@ function checkApellido() {
 }
 
 function nif(dni) {
+    /**
+     * Verifica el DNI
+     * Si el DNI es correcto devuelve 0
+     * Si la letra del DNI no es correcta devuelve 1
+     * Si el DNI no es válido devuelve 2
+     */
     var numero
     var letr
     var letra
@@ -77,7 +85,7 @@ function checkEmail() {
     return expresion_regular_email.test(email);
 }
 
-// Función que verifica el campo telefono
+// Función que verifica el campo teléfono
 function checkTelefono() {
     var telefono = document.getElementById("telefono").value;
     if (telefono.length < 9) {
@@ -266,7 +274,8 @@ function checkForm() {
     return resultado;
 }
 
-// Función que se ejecuta al enviar el formulario
+
+// 🟢🟢🟢 Función que se ejecuta al enviar el formulario 🟢🟢🟢
 document.getElementById("enviar").onclick = function () {
     let resultado_formulario = checkForm();
     let mensaje = "";
